@@ -13,7 +13,7 @@ public class Main {
 		
 		Faciliator f=stu;
 		f.quitEvent(f, 1);
-		
+		System.out.println("haha");
 	}
 
 }
