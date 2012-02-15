@@ -12,7 +12,7 @@ public class Main {
 		Student stu = new Student();
 		
 		Faciliator f=stu;
-		f.quitEvent(f, 1);
+	
 		
 	}
 
