@@ -1,11 +1,5 @@
 package team34.event.budget;
 
-
-
-
-
-
-
 import java.util.LinkedList;
 
 public class BudgetPlan implements Comparable<BudgetPlan> {
