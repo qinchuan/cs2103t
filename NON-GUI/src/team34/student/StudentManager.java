@@ -8,12 +8,24 @@ public class StudentManager {
 	
 	public StudentManager()
 	{
-		
+		studentList=new Hashtable<Integer, Student>();
 	}
 	
+	private boolean verifyStudentID(int studentID)
+	{
+		if (studentList.containsKey(studentID))
+		{
+			return true;
+		} 
+		return false;
+	}
 	public Student getStudent(int studentID)
 	{
-		return null;
+		if (verifyStudentID(studentID))
+		{	
+		return studentList.get(studentID);
+		}
+		else return null;
 	}
 
 }
