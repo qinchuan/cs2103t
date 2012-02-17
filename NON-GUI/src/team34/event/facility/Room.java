@@ -3,7 +3,7 @@ package team34.event.facility;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Room {
+public class Room implements Cloneable{
 	private LinkedList<Schedule> roomSchedules;
 	private String location;
 	private String type;
@@ -75,7 +75,7 @@ public class Room {
 		Iterator<Schedule> itr = roomSchedules.listIterator();
 		
 		while(itr.hasNext()){
-			returnSchedules.add(itr.next());
+			returnSchedules.add(itr.next().clone());
 		}
 		return returnSchedules;
 	}

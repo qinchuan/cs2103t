@@ -2,21 +2,22 @@ package team34.event.facility;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class VenueManager {
-	LinkedList<Faculty> faculties;
-	LinkedList<Room> rooms;
+	private Hashtable<String,Faculty> facultyTable;
 	
 	public VenueManager(){
-		faculties = new LinkedList<Faculty>();
-		rooms = new LinkedList<Room>();
+		facultyTable = new Hashtable<String,Faculty>();
 		loadInfo();
 	}
 	
-	//load venue information from existing files
+	//load venue information from existing files which can be changed if there is dummy data
 	private void loadInfo(){
 		try {
 			
@@ -31,7 +32,6 @@ public class VenueManager {
 				for(int i=0;i<numRoomType;i++){
 					int numRoom = sc.nextInt();			  	//read number of rooms per type
 					String roomType = sc.next(); 				  //read in room type name
-					newFac.addType(roomType);
 					
 					for(int j=0;j<numRoom;j++){
 						String location = sc.next();
@@ -39,11 +39,11 @@ public class VenueManager {
 						Room newRoom = new Room(location,roomType,capacity);
 						
 						newFac.addRoom(newRoom);   					//add new room in faculty list 
-						rooms.add(newRoom);							//add new room in the room list database
 					}
 				}
 				
-				faculties.add(newFac);    //add new faculty to list
+				//faculties.add(newFac);    //add new faculty to list
+				facultyTable.put(newFac.getName(), newFac);
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -55,61 +55,40 @@ public class VenueManager {
 	//return the faculty name list
 	public LinkedList<String> getFaculties(){
 		LinkedList<String> facultyList = new LinkedList<String>();
-		Iterator<Faculty> itr = faculties.listIterator();
+		Iterator<Map.Entry<String, Faculty>> itr = facultyTable.entrySet().iterator();
 		
 		while(itr.hasNext()){
-			facultyList.add(itr.next().getName());
+			facultyList.add(itr.next().getKey());
 		}
 		
 		return facultyList;
 	}
 	
+	public Room getRoom(String faculty,String location){
+		return facultyTable.get(faculty).getRoom(location);
+	}
+	//get a list of all rooms of faculty
+	public LinkedList<Room> getRoomsBy(String faculty){
+		return facultyTable.get(faculty).getRooms();
+	}
 
-	/*public LinkedList<Room> getRoomsByFac(String name){
-		return null;
-	}*/
-	/*	public Faculty getFaculty(String name){
-		 Iterator<Faculty> itr = faculties.listIterator();
-		 while(itr.hasNext()){
-			 Faculty returnFaculty = itr.next();
-			 if(returnFaculty.getName().equals(name)){
-				 return returnFaculty;
-			 }
-		 }		 
-		 return null;
-	}
-	*/
-	
-	//book a venue with a time period
-	public boolean bookVenue(Room room, Schedule schedule){
-		return room.addSchedule(schedule);
+	//get a list of rooms of a certain type under Faculty
+	public LinkedList<Room> getRoomsBy(String faculty, String type){
+		return facultyTable.get(faculty).getRoomsByType(type);
 	}
 	
-	public boolean bookVenue(String location, Schedule schedule){
-		 Iterator<Room> itr = rooms.listIterator();
-		 
-		 while(itr.hasNext()){
-			 Room room = itr.next();
-			 if(room.getLocation().equals(location)){
-				 return room.addSchedule(schedule);
-			 }
-		 }
-		 return false;
+	public Set<String> getTypeListOf(String faculty){
+		return facultyTable.get(faculty).getTypes();
 	}
+	//book a venue with schedule
+	public boolean bookVenue(String faculty, String location, Schedule newSchedule){
+		return facultyTable.get(faculty).bookVenue(location, newSchedule);
+	}
+
 	//cancel booking the venue with time period
-	public boolean cancelBooking(Room room, Schedule schedule){
-		return room.deleteSchedule(schedule);
+	public boolean cancelBooking(String faculty, String location, Schedule deleSchedule){
+		return facultyTable.get(faculty).cancelBooking(location, deleSchedule);
 	}
-	
-	public boolean cancelBooking(String location, Schedule schedule){
-		Iterator<Room> itr = rooms.listIterator();
-		 
-		 while(itr.hasNext()){
-			 Room room = itr.next();
-			 if(room.getLocation().equals(location)){
-				 return room.deleteSchedule(schedule);
-			 }
-		 }
-		 return false;
-	}
+		
+
 }
