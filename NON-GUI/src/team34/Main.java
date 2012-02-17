@@ -12,6 +12,7 @@ public class Main {
 		Student stu = new Student();
 		
 		Faciliator f=stu;
+		System.out.println();
 	
 		
 	}
