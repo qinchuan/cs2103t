@@ -23,9 +23,12 @@ public class StudentManager {
 	{
 		if (verifyStudentID(studentID))
 		{	
-		return studentList.get(studentID);
+			Student stu=(Student)studentList.get(studentID).clone();
+			return stu;
 		}
 		else return null;
 	}
+	
+	
 
 }

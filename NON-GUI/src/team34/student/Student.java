@@ -2,7 +2,7 @@ package team34.student;
 import team34.event.*;
 
 import sun.reflect.Reflection;
-public class Student implements Organizer, Faciliator, Participant {
+public class Student implements Organizer, Faciliator, Participant, Cloneable {
 
 
 	private String name;
@@ -18,6 +18,14 @@ public class Student implements Organizer, Faciliator, Participant {
 		gender="";
 		faculty="";
 		eventManager=new EventManager();
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public String getName()
+	{
+		return this.name;
 	}
 	
 	//below is for organiser
@@ -54,6 +62,16 @@ public class Student implements Organizer, Faciliator, Participant {
 		}
 	
 	}
-
+	public Object clone()
+	{
+		try {
+			return super.clone();
+			
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+		System.out.println("Cloning not allowed."); 
+			return null;
+		}
+	}
 	
 }

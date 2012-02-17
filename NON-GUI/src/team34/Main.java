@@ -1,5 +1,7 @@
 package team34;
 
+import java.util.LinkedList;
+
 import team34.student.*;
 public class Main {
 
@@ -8,12 +10,22 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("test");
+		
 		Student stu = new Student();
 		
-		Faciliator f=stu;
-		System.out.println();
-		//System.out.println();
+		Organizer org=stu;
+		
+		((Student)org).setName("aaa");
+		
+		Organizer org2=(Organizer)org.clone();
+		
+		((Student)org2).setName("bbb");
+		
+		
+		
+		
+		
+		
 	
 		
 	}

@@ -8,6 +8,8 @@ public class LoginManager {
 	
 	public LoginManager()
 	{
+		userList=new Hashtable<String, UserAccount>();
+		
 		
 	}
 	public boolean verifyPassword(String username, String password)

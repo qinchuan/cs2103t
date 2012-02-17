@@ -2,7 +2,7 @@ package team34.event.budget;
 
 import java.util.LinkedList;
 
-public class BudgetPlan implements Comparable<BudgetPlan> {
+public class BudgetPlan implements Comparable<BudgetPlan>,Cloneable {
 
 	private LinkedList<BudgetItem> budgetPlan;
 	private double totalPrice;

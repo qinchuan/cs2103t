@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.LinkedList;
 
 
-public class Event  {
+public class Event  implements Cloneable{
 
 	private int eventID;
 	private String eventName;
@@ -19,6 +19,21 @@ public class Event  {
 	public int getEventID()
 	{
 		return eventID;
+	}
+	public Event()
+	{
+		
+	}
+	public Object clone()
+	{
+		try {
+			return super.clone();
+			
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+		System.out.println("Cloning not allowed."); 
+			return null;
+		}
 	}
 	
 

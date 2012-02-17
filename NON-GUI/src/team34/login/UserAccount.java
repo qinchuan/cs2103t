@@ -1,6 +1,6 @@
 package team34.login;
 
-public class UserAccount {
+public class UserAccount implements Cloneable {
 
 	private String username;
 	private String password;
@@ -21,5 +21,16 @@ public class UserAccount {
 	public int getStudentID()
 	{
 		return studentID;
+	}
+	public Object clone()
+	{
+		try {
+			return super.clone();
+			
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+		System.out.println("Cloning not allowed."); 
+			return null;
+		}
 	}
 }
