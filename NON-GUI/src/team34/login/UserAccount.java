@@ -23,4 +23,15 @@ public class UserAccount  {
 		return studentID;
 	}
 	
+	protected void setUsername(String username)
+	{
+		this.username=username;
+	}
+	protected void setPassword(String password)
+	{
+		this.password=password;
+	}
+	
+	
+	
 }

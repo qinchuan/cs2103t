@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 public class StudentManager {
 	
-	Hashtable<Integer, Student> studentList;
+	private Hashtable<Integer, Student> studentList;
 	
 	public StudentManager()
 	{

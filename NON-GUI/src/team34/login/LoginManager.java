@@ -4,26 +4,37 @@ import java.util.Hashtable;
 
 public class LoginManager {
 
-	Hashtable<String, UserAccount> userList;
-	
+	private Hashtable<String, UserAccount> userList;
+
 	public LoginManager()
 	{
 		userList=new Hashtable<String, UserAccount>();
-		
-		
+
+
 	}
 	public boolean verifyPassword(String username, String password)
-	{
-		UserAccount temp=userList.get(username);
-		
-		if (temp.getPassword().equals(password))
+	{	
+		if (userList.containsKey(username))
 		{
-			return true;
-		}
+			UserAccount temp=userList.get(username);
+
+			if (temp.getPassword().equals(password))
+			{
+				return true;
+			}
 		return false;
+		}
+
+		else return false;
 	}
+	
+	//return 0 if there is no such username
 	public int getStudentID(String username)
-	{
-		return userList.get(username).getStudentID();
+	{   if (userList.contains(username))
+		{
+			return userList.get(username).getStudentID();
+		}
+		
+		return 0;
 	}
 }

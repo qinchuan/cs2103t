@@ -15,6 +15,7 @@ public class Event {
 	private BudgetPlan budgetPlan;
 	private String organiserName;
 	private boolean completed;
+	private boolean advertised;
 	
 	public int getEventID()
 	{
@@ -23,7 +24,7 @@ public class Event {
 	protected void setEventID(int eventID)
 	{
 		this.eventID=eventID;
-	}
+	}	
 	
 	public String getEventName()
 	{
