@@ -13,7 +13,7 @@ public class Main {
 		
 		Faciliator f=stu;
 		System.out.println();
-		System.out.println();
+		//System.out.println();
 	
 		
 	}
