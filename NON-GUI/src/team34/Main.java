@@ -15,11 +15,10 @@ public class Main {
 		
 		Organizer org=stu;
 		
-		((Student)org).setName("aaa");
+		Faciliator fac=stu;
 		
-		Organizer org2=(Organizer)org.clone();
+		Participant par=stu;
 		
-		((Student)org2).setName("bbb");
 		
 		
 		

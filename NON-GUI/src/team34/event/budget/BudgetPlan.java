@@ -2,7 +2,7 @@ package team34.event.budget;
 
 import java.util.LinkedList;
 
-public class BudgetPlan implements Comparable<BudgetPlan>,Cloneable {
+public class BudgetPlan implements Comparable<BudgetPlan> {
 
 	private LinkedList<BudgetItem> budgetPlan;
 	private double totalPrice;
@@ -16,7 +16,7 @@ public class BudgetPlan implements Comparable<BudgetPlan>,Cloneable {
 	}
 	
 	
-	public void addProduct(BudgetItem BI)
+	protected void addProduct(BudgetItem BI)
 	{
 		budgetPlan.add(BI);
 	}
@@ -24,7 +24,7 @@ public class BudgetPlan implements Comparable<BudgetPlan>,Cloneable {
 	{
 		this.totalPrice=totalPrice;
 	}
-	public void setTotalSat(int totalSat)
+	protected void setTotalSat(int totalSat)
 	{
 		this.totalSatisfaction=totalSat;
 	}
@@ -43,7 +43,7 @@ public class BudgetPlan implements Comparable<BudgetPlan>,Cloneable {
 	}
 	
 	//this one for qin chuan. to check if same type
-		public boolean equals(BudgetPlan temp)
+		protected boolean equals(BudgetPlan temp)
 		{
 
 			LinkedList<BudgetItem> tempBudgetPlan=temp.getProducts();

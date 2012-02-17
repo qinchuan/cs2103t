@@ -1,7 +1,7 @@
 package team34.student;
-public interface Organizer extends Cloneable {
+public interface Organizer  {
 
 	public void createEvent();
 	public void deleteEvent(int eventID);
-	public Object clone();
+
 }

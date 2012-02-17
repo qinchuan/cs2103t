@@ -2,14 +2,14 @@ package team34.student;
 import team34.event.*;
 
 import sun.reflect.Reflection;
-public class Student implements Organizer, Faciliator, Participant, Cloneable {
+public class Student implements Organizer, Faciliator, Participant {
 
 
 	private String name;
 	private int age;
 	private String gender;
 	private String faculty;
-	private EventManager eventManager;
+	public EventManager eventManager;
 	
 	public Student(){
 	
@@ -62,16 +62,6 @@ public class Student implements Organizer, Faciliator, Participant, Cloneable {
 		}
 	
 	}
-	public Object clone()
-	{
-		try {
-			return super.clone();
-			
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-		System.out.println("Cloning not allowed."); 
-			return null;
-		}
-	}
+
 	
 }

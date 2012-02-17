@@ -3,7 +3,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
-public class EventManager implements Cloneable{
+public class EventManager {
 
 	private Hashtable<Integer,Event> organisedEvents;
 	private Hashtable<Integer,Event> faciliatedEvents;
@@ -43,17 +43,9 @@ public class EventManager implements Cloneable{
 	
 	public Hashtable<Integer, Event> getOrganisedEvents()
 	{
-		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>();
+		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>(organisedEvents);
 		
-		Set<Integer> set = organisedEvents.keySet();
-		Iterator<Integer> itr = set.iterator();
-	    while (itr.hasNext()) 
-	    {
-	    	int key=itr.next();
-	    	Event e=(Event)organisedEvents.clone();
-	    	temp.put(key, e);
-	    	
-	    }
+		
 	    return temp;
 		
 	
@@ -61,47 +53,21 @@ public class EventManager implements Cloneable{
 	public Hashtable<Integer,Event> getFaciliatedEvents()
 	{
 
-		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>();
+		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>(faciliatedEvents);
 		
-		Set<Integer> set = faciliatedEvents.keySet();
-		Iterator<Integer> itr = set.iterator();
-	    while (itr.hasNext()) 
-	    {
-	    	int key=itr.next();
-	    	Event e=(Event)faciliatedEvents.clone();
-	    	temp.put(key, e);
-	    	
-	    }
+		
 	    return temp;
 	}
 	public Hashtable<Integer,Event> getParticipantEvents()
 	{
-		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>();
+		Hashtable<Integer,Event> temp=new Hashtable<Integer,Event>(participatedEvents);
 		
-		Set<Integer> set = participatedEvents.keySet();
-		Iterator<Integer> itr = set.iterator();
-	    while (itr.hasNext()) 
-	    {
-	    	int key=itr.next();
-	    	Event e=(Event)participatedEvents.clone();
-	    	temp.put(key, e);
-	    	
-	    }
+		
 	    return temp;
 	}
 	
 	
 	
-	public Object clone()
-	{
-		try {
-			return super.clone();
-			
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-		System.out.println("Cloning not allowed."); 
-			return null;
-		}
-	}
+	
 
 }

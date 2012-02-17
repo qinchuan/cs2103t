@@ -2,7 +2,7 @@ package team34.event.budget;
 
 
 
-public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
+public class BudgetItem implements Comparable<BudgetItem> {
 
 	private String name ;
 	private String type;
@@ -20,7 +20,7 @@ public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
 		satisfaction=0;
 		price=0.0;
 	}
-	public void setType(String type)
+	protected void setType(String type)
 	{
 		this.type=type;
 	}
@@ -28,7 +28,7 @@ public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
 	{
 		return this.type;
 	}
-	public void setName(String name)
+	protected void setName(String name)
 	{
 		this.name=name;
 	}
@@ -36,7 +36,7 @@ public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
 	{
 		return name;
 	}
-	public void setPrice(double price)
+	protected void setPrice(double price)
 	{
 		this.price=price;
 	}
@@ -44,7 +44,7 @@ public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
 	{
 		return price;
 	}
-	public void setSatisfaction(int satisfaction)
+	protected void setSatisfaction(int satisfaction)
 	{
 		this.satisfaction=satisfaction;
 	}
@@ -67,16 +67,6 @@ public class BudgetItem implements Comparable<BudgetItem>,Cloneable {
 		}
 		else return -1;
 	}
-	public Object clone()
-	{
-		try {
-			return super.clone();
-			
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-		System.out.println("Cloning not allowed."); 
-			return null;
-		}
-	}
+	
 	
 }
