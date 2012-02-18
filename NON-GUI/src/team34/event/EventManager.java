@@ -1,55 +1,62 @@
 package team34.event;
-import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Set;
+import java.util.TreeSet;
+
+import team34.storage.StorageAccessManager;
 public class EventManager {
 
-	private LinkedList<Event> organisedEvents;
-	private LinkedList<Event> faciliatedEvents;
-	private LinkedList<Event> participatedEvents;
+	Set <String> participateEventList;
+	Set <String> facilitateEventList;
+	Set <String> organizedEventList;
 	
-	public EventManager()
-	{
-		organisedEvents=new LinkedList<Event>();
-		faciliatedEvents=new LinkedList<Event>();
-		participatedEvents=new LinkedList<Event>();
-		
+	public EventManager(){
+		participateEventList = new TreeSet<String>();
+		facilitateEventList = new TreeSet<String>();
+		organizedEventList = new TreeSet<String>();
 	}
 	
-	public void deleteEvents(int eventID)
-	{
-		Iterator<Event> itr=organisedEvents.iterator();
-		while (itr.hasNext())
-		{
-			Event temp=itr.next();
-			if (temp.getEventID()==eventID)
-			{
-				itr.remove();
-			}
-		}
+	public boolean addParticipateEvent(String eventId){
+		return participateEventList.add(eventId);
 	}
-	public void quitEventF(int eventID)
-	{
-		Iterator<Event> itr=faciliatedEvents.iterator();
-		while (itr.hasNext())
-		{
-			Event temp=itr.next();
-			if (temp.getEventID()==eventID)
-			{
-				itr.remove();
-			}
-		}
+	public boolean addFacilitateEvent(String eventId){
+		return facilitateEventList.add(eventId);
 	}
-	public void quitEventP(int eventID)
-	{
+	public boolean addOrganizeEvent(String eventId){
+		return organizedEventList.add(eventId);
+	}
+	public boolean removeParticipateEvent(String eventId){
+		return participateEventList.remove(eventId);
+	}
+	public boolean removeFacilitateEvent(String eventId){
+		return facilitateEventList.remove(eventId);
+	}
+	public boolean removeOrganizeEvent(String eventId){
+		return organizedEventList.remove(eventId);
+	}
+	public LinkedList<String> getParticipateEventList(){
+		LinkedList<String> returnList = new LinkedList<String>();
+		for(String curEventID: participateEventList){
+			returnList.add(curEventID);
+		}
+		return returnList;
+	}
+	public LinkedList<String> getFacilitateEventList(){
+		LinkedList<String> returnList = new LinkedList<String>();
+		for(String curEventID: facilitateEventList){
+			returnList.add(curEventID);
+		}
+		return returnList;
+	}
+	public LinkedList<String> getOrganizeEventList(){
+		LinkedList<String> returnList = new LinkedList<String>();
+		for(String curEventID: organizedEventList){
+			returnList.add(curEventID);
+		}
+		return returnList;	
+	}
 	
-		Iterator<Event> itr=participatedEvents.iterator();
-		while (itr.hasNext())
-		{
-			Event temp=itr.next();
-			if (temp.getEventID()==eventID)
-			{
-				itr.remove();
-			}
-		}
+	public Event getEvent(int id){
+		return StorageAccessManager.getEvent(id);
 	}
 }

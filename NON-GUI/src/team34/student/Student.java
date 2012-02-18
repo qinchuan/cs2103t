@@ -46,14 +46,14 @@ public class Student implements Organizer, Faciliator, Participant {
 	public void quitEvent(Object o, int eventID)
 	{
 
-		if (o instanceof Faciliator)
+		/*if (o instanceof Faciliator)
 		{
 			eventManager.quitEventP(eventID);
 			
 		}else if (o instanceof Participant)
 		{
 			eventManager.quitEventF(eventID);
-		}
+		}*/
 	
 	}
 
