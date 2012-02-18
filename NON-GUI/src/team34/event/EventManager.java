@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-package team34.event;
-=======
+
+
 package team34.event;
 
->>>>>>> 6471891b7e36e2f3dd9865fe29736b446f9cdf83
+
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
@@ -64,8 +63,7 @@ public class EventManager {
 	public Event getEvent(int id){
 		return StorageAccessManager.getEvent(id);
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> 6471891b7e36e2f3dd9865fe29736b446f9cdf83
+
+
 }

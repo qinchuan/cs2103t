@@ -43,7 +43,7 @@ public class Main {
 	 LinkedList<Schedule> changed = mang.getRoom("Science", "LT33").getSchedules();
 	 for(Schedule cur:changed){
 		 System.out.println(cur.toString());
-<<<<<<< HEAD
+
 	 }
 
 		
@@ -66,11 +66,11 @@ public class Main {
 	
 		
 
-=======
+
 	 }		
 		
 		
->>>>>>> 6471891b7e36e2f3dd9865fe29736b446f9cdf83
+
 	}
 
-}
+
