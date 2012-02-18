@@ -2,11 +2,13 @@ package team34.event;
 
 import team34.event.facility.*;
 import team34.event.budget.*;
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 
 
-public class Event {
+public class Event implements Serializable {
 
 	private int eventID;
 	private String eventName;

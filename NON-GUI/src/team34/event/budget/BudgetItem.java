@@ -1,8 +1,10 @@
 package team34.event.budget;
 
+import java.io.Serializable;
 
 
-public class BudgetItem implements Comparable<BudgetItem> {
+
+public class BudgetItem implements Comparable<BudgetItem>,Serializable {
 
 	private String name ;
 	private String type;
@@ -20,37 +22,51 @@ public class BudgetItem implements Comparable<BudgetItem> {
 		satisfaction=0;
 		price=0.0;
 	}
-	protected void setType(String type)
+	public int getQuantity()
 	{
-		this.type=type;
+		return this.quantity;
 	}
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public double getPrice()
+	{
+		return price;
+	}
+	
 	public String getType()
 	{
 		return this.type;
+	}
+	public int getSatisfaction()
+	{
+		return satisfaction;
+	}
+	
+	protected void setType(String type)
+	{
+		this.type=type;
 	}
 	protected void setName(String name)
 	{
 		this.name=name;
 	}
-	public String getName()
-	{
-		return name;
-	}
+	
 	protected void setPrice(double price)
 	{
 		this.price=price;
 	}
-	public double getPrice()
-	{
-		return price;
-	}
+	
 	protected void setSatisfaction(int satisfaction)
 	{
 		this.satisfaction=satisfaction;
 	}
-	public int getSatisfaction()
+	
+	public void setQuantity(int quantity)
 	{
-		return satisfaction;
+		this.quantity=quantity;
 	}
 	
 	public int compareTo(BudgetItem BI)

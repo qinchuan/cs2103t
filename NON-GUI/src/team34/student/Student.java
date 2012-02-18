@@ -1,8 +1,10 @@
 package team34.student;
+import java.io.Serializable;
+
 import team34.event.*;
 
 import sun.reflect.Reflection;
-public class Student implements Organizer, Faciliator, Participant {
+public class Student implements Organizer, Faciliator, Participant,Serializable {
 
 
 	private String name;

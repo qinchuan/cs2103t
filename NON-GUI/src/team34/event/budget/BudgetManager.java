@@ -2,11 +2,12 @@ package team34.event.budget;
 
 
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class BudgetManager {
+public class BudgetManager implements Serializable {
 
 	
 	private LinkedList<BudgetItem> studentInputBudgetItems;

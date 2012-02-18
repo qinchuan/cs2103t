@@ -1,6 +1,12 @@
 package team34.login;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Hashtable;
+
+import team34.storage.StorageAccessManager;
 
 public class LoginManager {
 
@@ -8,9 +14,43 @@ public class LoginManager {
 
 	public LoginManager()
 	{
-		userList=new Hashtable<String, UserAccount>();
+		userList=Initiliaze();
+		System.out.println(userList.size());
 
-
+	}
+	public boolean save()
+	
+	{ 	
+		if (StorageAccessManager.saveUserAccount(userList, "database/UserAccounts"))
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	private Hashtable<String, UserAccount> Initiliaze()
+	{
+		Hashtable<String, UserAccount> temp=StorageAccessManager.InitializeUserAccount("database/UserAccounts");
+		if (temp==null || temp.size()==0)
+		{
+			return null;
+		}
+		else 
+		{
+			
+			
+			return temp;
+		}
+	
+		
+	}
+	public void createAccount(String username, String password, int studentID)
+	{
+		UserAccount temp=new UserAccount();
+		temp.setUsername(username);
+		temp.setPassword(password);
+		temp.setStudentID(studentID);
+		userList.put(username, temp);
 	}
 	public boolean verifyPassword(String username, String password)
 	{	

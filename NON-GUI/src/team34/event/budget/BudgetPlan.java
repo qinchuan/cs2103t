@@ -1,8 +1,9 @@
 package team34.event.budget;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class BudgetPlan implements Comparable<BudgetPlan> {
+public class BudgetPlan implements Comparable<BudgetPlan>,Serializable {
 
 	private LinkedList<BudgetItem> budgetPlan;
 	private double totalPrice;

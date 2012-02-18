@@ -1,6 +1,8 @@
 package team34.login;
 
-public class UserAccount  {
+import java.io.Serializable;
+
+public class UserAccount  implements Serializable  {
 
 	private String username;
 	private String password;
@@ -30,6 +32,10 @@ public class UserAccount  {
 	protected void setPassword(String password)
 	{
 		this.password=password;
+	}
+	protected void setStudentID(int studentID)
+	{
+		this.studentID=studentID;
 	}
 	
 	
