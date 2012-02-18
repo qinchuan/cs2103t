@@ -20,7 +20,7 @@ public class BudgetItem implements Comparable<BudgetItem> {
 		satisfaction=0;
 		price=0.0;
 	}
-	public void setType(String type)
+	protected void setType(String type)
 	{
 		this.type=type;
 	}
@@ -28,7 +28,7 @@ public class BudgetItem implements Comparable<BudgetItem> {
 	{
 		return this.type;
 	}
-	public void setName(String name)
+	protected void setName(String name)
 	{
 		this.name=name;
 	}
@@ -36,7 +36,7 @@ public class BudgetItem implements Comparable<BudgetItem> {
 	{
 		return name;
 	}
-	public void setPrice(double price)
+	protected void setPrice(double price)
 	{
 		this.price=price;
 	}
@@ -44,7 +44,7 @@ public class BudgetItem implements Comparable<BudgetItem> {
 	{
 		return price;
 	}
-	public void setSatisfaction(int satisfaction)
+	protected void setSatisfaction(int satisfaction)
 	{
 		this.satisfaction=satisfaction;
 	}
@@ -67,5 +67,6 @@ public class BudgetItem implements Comparable<BudgetItem> {
 		}
 		else return -1;
 	}
+	
 	
 }

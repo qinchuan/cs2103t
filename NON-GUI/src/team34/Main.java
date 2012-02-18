@@ -1,9 +1,13 @@
 package team34;
 
 import java.util.LinkedList;
+<<<<<<< HEAD
 import java.util.Set;
 
 import team34.event.facility.*;
+=======
+
+>>>>>>> 702cfae6a50d599766001a73b0473c591ab40e27
 import team34.student.*;
 public class Main {
 
@@ -12,6 +16,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 	 VenueManager mang = new VenueManager();
 	 
 	 mang.bookVenue("Science", "LT33", new Schedule("18 Feb",12,14));
@@ -33,6 +38,25 @@ public class Main {
 	 for(Schedule cur:changed){
 		 System.out.println(cur.toString());
 	 }
+=======
+		
+		Student stu = new Student();
+		
+		Organizer org=stu;
+		
+		Faciliator fac=stu;
+		
+		Participant par=stu;
+		
+		
+		
+		
+		
+		
+		
+	
+		
+>>>>>>> 702cfae6a50d599766001a73b0473c591ab40e27
 	}
 
 }
