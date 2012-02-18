@@ -47,18 +47,7 @@ public class Main {
 	 }
 
 		
-		Student stu = new Student();
-		
-		
-		
-		Integer a=new Integer(4);
 	
-		LoginManager temp=new LoginManager();
-		//temp.createAccount("test", "123456", 111);
-		//temp.createAccount("aaa", "sdsd", 1112);
-		//temp.save();
-		//temp.Initiliaze();
-		
 		
 		
 		
