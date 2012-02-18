@@ -12,6 +12,7 @@ import java.util.LinkedList;
 
 
 
+<<<<<<< HEAD
 public class Event implements Serializable {
 
 
@@ -19,6 +20,14 @@ public class Event implements Serializable {
 
 	private int eventID;
 	private String eventName;
+=======
+public class Event  {
+
+	private int eventID;
+	private String eventName;
+	private int numParticipant;
+	private int numFacilitator;
+>>>>>>> 6471891b7e36e2f3dd9865fe29736b446f9cdf83
 
 	
 	private LinkedList<VenueBookingRecord> vbrList;
@@ -36,6 +45,10 @@ public class Event implements Serializable {
 	
 
 	private boolean advertised;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6471891b7e36e2f3dd9865fe29736b446f9cdf83
 	
 	public int getEventID()
 	{

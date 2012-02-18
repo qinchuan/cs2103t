@@ -10,7 +10,7 @@ import team34.storage.StorageAccessManager;
 
 public class LoginManager {
 
-	private Hashtable<String, UserAccount> userList;
+	private  Hashtable<String, UserAccount> userList;
 
 	public LoginManager()
 	{
