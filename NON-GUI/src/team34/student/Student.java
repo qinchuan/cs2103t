@@ -5,10 +5,6 @@ import java.io.Serializable;
 import team34.event.EventManager;
 public class Student implements Organizer, Faciliator, Participant, Serializable {
 
-	private String userID;
-	private String password;
-
-
 	private String name;
 	private int age;
 	private String gender;
@@ -26,8 +22,7 @@ public class Student implements Organizer, Faciliator, Participant, Serializable
 	
 	public Student(){
 	
-		userID="";
-		password="";
+		
 
 		name="";
 		age=0;
