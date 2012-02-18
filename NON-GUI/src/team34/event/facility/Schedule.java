@@ -1,6 +1,6 @@
 package team34.event.facility;
 
-public class Schedule {
+public class Schedule implements Cloneable {
 	private String date;
 	private int startTime;
 	private int endTime;
@@ -28,6 +28,14 @@ public class Schedule {
 	//get end time
 	public int getEndTime(){
 		return endTime;
+	}
+	public Schedule clone(){
+		try{ 
+		   return (Schedule) super.clone();  
+		   } catch( CloneNotSupportedException e ){
+			   return null;          
+			   }
+		
 	}
 	//return schedule information to string, format eg: 12:00 ~ 14:00, date
 	public String toString(){
