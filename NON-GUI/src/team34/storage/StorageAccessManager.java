@@ -1,6 +1,9 @@
 package team34.storage;
 
-<<<<<<< HEAD
+
+
+
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -12,11 +15,24 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Hashtable;
+import team34.login.*;
+import team34.event.Event;
 
-
-import team34.login.UserAccount;
 public class StorageAccessManager {
+	private static Map<Integer, Event> eventDatabase;
+	
+	public StorageAccessManager(){
+		eventDatabase = new TreeMap<Integer,Event>();
+	}
+	public static Event getEvent(int eventId){
+		return eventDatabase.get(eventId);
+	}
+	public static void addEvent(Event newEvent){
+		eventDatabase.put(newEvent.getEventID(), newEvent);
+	}
 	
 	public static boolean saveUserAccount(Hashtable<String,UserAccount> list, String filename)
 	{
@@ -80,24 +96,4 @@ public class StorageAccessManager {
 		
 	}
 
-
-=======
-import java.util.Map;
-import java.util.TreeMap;
-
-import team34.event.Event;
-
-public class StorageAccessManager {
-	private static Map<Integer, Event> eventDatabase;
-	
-	public StorageAccessManager(){
-		eventDatabase = new TreeMap<Integer,Event>();
-	}
-	public static Event getEvent(int eventId){
-		return eventDatabase.get(eventId);
-	}
-	public static void addEvent(Event newEvent){
-		eventDatabase.put(newEvent.getEventID(), newEvent);
-	}
->>>>>>> 254c5da76b0a2ee30a249a00c126134e65645338
 }
